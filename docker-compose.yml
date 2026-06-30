@@ -1,0 +1,11 @@
+services:
+  pythonengine:
+    build: .
+    ports: ["8080:8080"]
+    volumes:
+      - ./apps:/app/apps
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./config.yaml:/app/config.yaml
+      - ./startup.txt:/app/startup.txt
+    restart: unless-stopped
